@@ -1,7 +1,8 @@
 (function() {
   // Inject CSS
   var css = `
-    .button-style {
+    .mattressai-button-style {
+      border: none;
       background-color: #3f3f46;
       padding: 8px;
       position: fixed;
@@ -12,11 +13,12 @@
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       cursor: pointer;
     }
-    .button-style:hover {
+    .mattressai-button-style:hover {
+      border: none;
       background-color: #37373d;
       transform: scale(1.05);
     }
-    .modal-background {
+    .mattressai-modal-background {
       position: fixed;
       top: 0;
       right: 0;
@@ -25,39 +27,38 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 50;
     }
-    .modal-container {
+    .mattressai-modal-container {
+      border: none;
       position: fixed;
       bottom: 1rem;
       right: 1rem;
       background-color: #18181b;
-      padding: 16px;
-      border-radius: 8px;
+      border-radius: 20%;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       max-width: 90%;
-      width: 380px;
-      height: 95%;
+      width: 26vw;
+      height: 92%;
       max-height: 900px;
     }
-    .modal-header {
-      position: absolute;
-      top: -1%;
-      right: -1%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-bottom: 14px;
+    iframe {
+      border: none;
     }
-    .modal-close-button {
-    background-color: #ef4444;
-    color: white;
-    border-radius: 9999px;
-    cursor: pointer;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  .modal-close-button:hover {
-    background-color: #a22020;
-  }
+    @media (max-width: 768px) {
+      .mattressai-modal-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-right: 5px;
+        padding-left: 5px;
+        min-width: 100vw;
+        max-height: calc(100% - 120px);
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+    }
   `;
   var style = document.createElement('style');
   if (style.styleSheet){
@@ -72,7 +73,7 @@
   var iframeSrc = userConfig.src || "https://dashboard.themattressai.com/QRchat/OkHkFvjcqccNfikX2m8EfnPEfjJ3";
 
   var html = `
-    <button onclick="openModal()" class="button-style">
+    <button onclick="openModal()" class="mattressai-button-style">
     <img
       src="https://res.cloudinary.com/djr22sgp3/image/upload/v1689685357/mattress_ai_logo_circle_2_aw3f3q.png"
       width="40"
@@ -80,13 +81,8 @@
     />
   </button>
 
-  <div id="modal" class="modal-background" style="display: none; width: 100%; height: 100%;" onclick="closeModal(event)">
-    <div class="modal-container" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <button onclick="closeModal(event)" class="modal-close-button">
-          &#10005;
-        </button>
-      </div>
+  <div id="modal" class="mattressai-modal-background" style="display: none; width: 100%; height: 100%;" onclick="closeModal(event)">
+    <div class="mattressai-modal-container" onclick="event.stopPropagation()">
       <iframe src="${iframeSrc}" style="border-radius: 8px; width: 100%; height: 100%; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"></iframe>
     </div>
   </div>
