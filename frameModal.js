@@ -3,7 +3,8 @@
   var css = `
     .mattressai-button-style {
       border: none;
-      background-color: #3f3f46;
+      background-color: #3f3f46A6;
+      backdrop-filter: blur(60px);
       padding: 8px;
       position: fixed;
       bottom: 20px;
@@ -15,8 +16,8 @@
     }
     .mattressai-button-style:hover {
       border: none;
-      background-color: #37373d;
-      transform: scale(1.05);
+      background-color: #52525bA6;
+      backdrop-filter: blur(60px);
     }
     .mattressai-modal-background {
       position: fixed;
@@ -36,7 +37,7 @@
       border-radius: 20%;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       max-width: 90%;
-      width: 26vw;
+      width: 30vw;
       height: 92%;
       max-height: 900px;
     }
