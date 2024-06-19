@@ -2,18 +2,24 @@
   // Inject CSS
   var css = `
     .mattressai-button-style {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: none;
-      background-color: #3f3f46A6;
+      background-color: #2196F3;
       backdrop-filter: blur(60px);
-      padding: 8px;
+      padding: 12px 16px;
       position: fixed;
+      left: 20px;
       bottom: 20px;
-      right: 20px;
-      border-radius: 9999px;
+      border-radius: 20px;
       z-index: 50;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       cursor: pointer;
       color: white;
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: bold
     }
     .mattressai-button-style:hover {
       border: none;
