@@ -25,6 +25,8 @@
       background-color: #52525bA6;
     }
     .mattressai-button-image {
+      width: 16px;
+      height: 16px;
       margin-right: 10px;
     }
     .mattressai-modal-background {
