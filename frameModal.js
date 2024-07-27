@@ -25,8 +25,8 @@
       background-color: #52525bA6;
     }
     .mattressai-button-image {
-      width: 16px;
-      height: 16px;
+      width: 36px;
+      height: 36px;
       margin-right: 10px;
     }
     .mattressai-modal-background {
@@ -88,7 +88,7 @@
       <img
         class="mattressai-button-image"
         src="https://res.cloudinary.com/dkbn21xdu/image/upload/v1720271826/fff_fufol2.png"
-        width="32"
+        width="36"
         alt="Open Modal"
       />
       <span>Find Your Mattress</span>
